@@ -1,0 +1,7 @@
+﻿@model IEnumerable<TweetSharp.TwitterStatus>
+
+@{
+    ViewBag.Title = "Timeline";
+}
+
+@Html.Partial("_TwitterTimeline", Model)

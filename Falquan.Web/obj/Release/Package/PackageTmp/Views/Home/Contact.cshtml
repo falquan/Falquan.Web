@@ -1,0 +1,46 @@
+﻿@model Falquan.Web.Models.Contact
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+@section Aside{
+    @Html.Action("Timeline", "Twitter")
+}
+
+<div class="wrapper">
+    <section class="contact">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Contact: (* indicates required field)</legend>
+                <div class="form-line">
+                    <div class="validator">@Html.ValidationMessageFor(m => m.Name)</div>
+                    <div class="label">@Html.LabelFor(m => m.Name)</div>
+                    <div class="field">@Html.TextBoxFor(m => m.Name, new { maxlength = 100 })</div>
+                </div>
+
+                <div class="form-line">
+                    <div class="validator">@Html.ValidationMessageFor(m => m.Email)</div>
+                    <div class="label">*@Html.LabelFor(m => m.Email)</div>
+                    <div class="field">@Html.TextBoxFor(m => m.Email, new { maxlength = 100 })</div>
+                </div>
+
+                <div class="form-line">
+                    <div class="validator">@Html.ValidationMessageFor(m => m.Message)</div>
+                    <div class="label">*@Html.LabelFor(m => m.Message)</div>
+                    <div class="field">@Html.TextAreaFor(m => m.Message, new { maxlength = 1000 })</div>
+                </div>
+
+                <div><input type="submit" value="Submit" /></div>
+            </fieldset>
+        }
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

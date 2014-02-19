@@ -1,0 +1,18 @@
+﻿@using Falquan.Web
+@model IEnumerable<TweetSharp.TwitterStatus>
+
+<div class="twitter">
+    <h3><a href="http://twitter.com/falquan">@@falquan</a></h3>
+    <ul>
+        @foreach (var tweet in Model)
+        {
+            <li>
+                <div class="tweet">@Html.Raw(tweet.TextAsHtml)
+                    <div class="timestamp" title="@tweet.CreatedDate.ToLongTwitterTimeStamp()">
+                        <a href="http://twitter.com/@tweet.User.ScreenName/status/@tweet.Id">@tweet.CreatedDate.ToTwitterTimeStamp()</a>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Falquan.com/@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width" />
+        <meta name="author" content="Greg Leppert" />
+        <meta name="description" content="A Strange and Wonderful Place" />
+        @Styles.Render("~/Styles/css/reset")
+        @Styles.Render("~/Styles/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <nav class="float-right">
+                <ul class="menu">
+                    <li><a href="http://falquan-disc.cloudapp.net/">Blog</a></li>
+                    <li><a href="http://www.linkedin.com/pub/greg-leppert/6/5b0/402/">LinkedIn</a></li>
+                    <li><a href="https://www.facebook.com/leppert.greg">Facebook</a></li>
+                    <li><a href="https://twitter.com/Falquan">Twitter</a></li>
+                </ul>
+            </nav>
+            <h1>@Html.ActionLink("Falquan.com", "Index", "Home")</h1>
+            <h2>A Strange and Wonderful Place</h2>
+        </header>
+
+        <div class="clear-fix"></div>
+
+        <section class="main">
+            @RenderBody()
+        </section>
+
+        <section class="aside">
+            @RenderSection("Aside", required: false)
+        </section>
+
+        <div class="clear-fix"></div>
+
+        <footer>
+            <p class="license"><a href="http://bobloblawlawblog.ytmnd.com/">The fine print.</a></p>
+            <p class="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img id="license" alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>
+                <span class="hidden"><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Falquan.com</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://falquan.com/" property="cc:attributionName" rel="cc:attributionURL">Greg Leppert</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</span>
+            </p>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("Scripts", required: false)
+        @Scripts.Render("~/bundles/analytics/ga")
+    </body>
+</html>

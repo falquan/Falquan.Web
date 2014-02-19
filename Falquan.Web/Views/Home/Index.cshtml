@@ -1,0 +1,43 @@
+﻿@using System.IdentityModel.Metadata
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Greg Leppert" />
+    <meta name="description" content="A Strange and Wonderful Place" />
+
+    <title>Falquan.com/</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    @Styles.Render("~/Styles/css/reset")
+    @Styles.Render("~/Styles/css/home")
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="title">Falquan.com</h1>
+        <p class="tagline">
+           A Strange and Wonderful Place
+        </p>
+        <div id="subscribe">
+            <ul id="main" class="menu">
+                <li><a href="http://falquan-disc.cloudapp.net/">Blog</a></li>
+                <li>@Html.ActionLink("About", "About")</li>
+                <li>@Html.ActionLink("Contact", "Contact")</li>
+            </ul>
+            <ul id="social" class="menu">
+                <li><a href="http://www.linkedin.com/pub/greg-leppert/6/5b0/402/">LinkedIn</a></li>
+                <li><a href="https://www.facebook.com/leppert.greg">Facebook</a></li>
+                <li><a href="https://twitter.com/Falquan">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/analytics/ga")
+</body>
+</html>
